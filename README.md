@@ -13,15 +13,15 @@
 
 ---
 
-## 🧭 Executive Summary
+##  Executive Summary
 This repository delivers an enterprise-grade reporting and data visualization architecture built around a global pharmaceutical dataset. By integrating a lightweight **Python Dash web application** with deep **Power BI relational data modeling**, the project tracks multi-dimensional performance vectors including unit margins, gross profits, and transactional volumes segmented by geography, demographics, and chronological ranges.
 
 ---
 
-## 📂 Architecture & Directory Layout
+##  Architecture & Directory Layout
 
 ```text
-📦 
+ 
 ├── 📁 dash.app/                 # Interactive web dashboard (Python, Dash, Plotly, OpenPyXL)
 │   ├── 📄 app.py                # Main application entry point & reactive layout callbacks
 │   └── 📄 requirements.txt      # Pinned dependency manifest
