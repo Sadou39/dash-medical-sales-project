@@ -21,10 +21,54 @@ This repository delivers an enterprise-grade reporting and data visualization ar
 ##  Architecture & Directory Layout
 
 ```text
- 
-├── 📁 dash.app/                 # Interactive web dashboard (Python, Dash, Plotly, OpenPyXL)
-│   ├── 📄 app.py                # Main application entry point & reactive layout callbacks
-│   └── 📄 requirements.txt      # Pinned dependency manifest
-├── 📁 dashboard with Power BI/  # Executive BI environment (.pbix models & DAX metrics)
-├── 📁 data/                     # Cleaned relational dataset repository (medical_sales.xlsx)
-└── 📄 README.md                 # Technical specification and documentation
+
+├── dash.app/                 # Interactive web dashboard (Python, Dash, Plotly, OpenPyXL)
+│   ├── app.py                # Main application entry point & reactive layout callbacks
+│   └── requirements.txt      # Pinned dependency manifest
+├── dashboard with Power BI/  # Executive BI environment (.pbix models & DAX metrics)
+├── data/                     # Cleaned relational dataset repository (medical_sales.xlsx)
+└── README.md                 # Technical specification and documentation
+```
+---
+
+##  Part 1: Interactive Web Application (`dash.app/`)
+The interactive web tier is engineered using **Dash** and **Plotly**, leveraging multi-table relational joins to drive real-time graphical outputs.
+
+### Key Technical Features:
+* **Relational Data Pipeline:** Automatically ingests, cleans, and merges normalized sheets (`Transactions`, `Products`, `Customers`) on runtime.
+* **Dynamic Calculations:** Computes gross financial returns via vectorized transformations:
+  * Total Sales = Units Sold * Unit Sales Price
+  * Total Cost = Units Sold * Cost Of Production
+  * Gross Profit = Total Sales - Total Cost
+* **Reactive Filtering:** Context-aware UI binding enabling instantaneous multi-variable filtering by international market and custom time horizons.
+
+### Local Execution Guide:
+1. Navigate to the application folder:
+   cd dash.app
+2. Install the required environment packages:
+   pip install -r requirements.txt
+3. Execute the server script:
+   python app.py
+4. Access the local instance in your web browser at: http://127.0.0.1:8050
+
+---
+
+##  Part 2: Business Intelligence Suite (`dashboard with Power BI/`)
+The enterprise BI segment provides exhaustive data storytelling through structured dimensional modeling.
+
+* **Schema Design:** Implements a star-schema configuration linking transactional fact tables to dimensional attributes.
+* **DAX Measures:** Custom calculations tracking year-over-year profitability growth, product performance matrices, and regional market penetration.
+* **Interactive Visuals:** Cross-filtering dashboards optimized for executive decision-making.
+
+---
+
+##  Technology Stack & Dependencies
+* **Core Language:** Python 3.x
+* **Data Processing & Manipulation:** Pandas, NumPy, OpenPyXL
+* **Data Visualization:** Plotly, Dash, Power BI Desktop
+* **Version Control:** Git & GitHub
+
+---
+
+##  License & Academic Context
+Developed as part of the advanced data analytics curriculum (**CMC CS-Morocco**). All analytical scripts and database structures are maintained under standard academic deployment frameworks.
